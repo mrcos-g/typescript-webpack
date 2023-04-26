@@ -1,0 +1,32 @@
+{
+  "configurations": [
+    {
+      "name": "WatchDebug",
+      "port": 9229,
+      "request": "attach",
+      "restart": true,
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "WatchBuild",
+      "cwd": "${workspaceRoot}",
+      "program": "${workspaceRoot}/node_modules/webpack/bin/webpack.js",
+      "args": ["--config", "./webpack.dev.ts", "--watch"],
+      "sourceMaps": true,
+      "restart": true,
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "console": "integratedTerminal"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "run debug",
+      "configurations": ["WatchBuild", "WatchDebug"]
+    }
+  ]
+}
