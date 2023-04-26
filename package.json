@@ -8,6 +8,8 @@
   "devDependencies": {
     "@types/node": "^18.16.0",
     "@types/webpack": "^5.28.1",
+    "clean-webpack-plugin": "^4.0.0",
+    "fork-ts-checker-webpack-plugin": "^8.0.0",
     "nodemon-webpack-plugin": "^4.8.1",
     "ts-loader": "^9.4.2",
     "ts-node": "^10.9.1",
