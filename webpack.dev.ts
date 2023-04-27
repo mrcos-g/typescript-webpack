@@ -1,6 +1,7 @@
 import { merge } from 'webpack-merge';
 import path from 'path';
 import NodemonPlugin from 'nodemon-webpack-plugin';
+import ESLintPlugin from 'eslint-webpack-plugin';
 import commonConfig from './webpack.common';
 
 const devConfig = merge(commonConfig, {
@@ -13,6 +14,7 @@ const devConfig = merge(commonConfig, {
       ext: 'js,json,ts',
       nodeArgs: ['--inspect'],
     }),
+    new ESLintPlugin(),
   ],
 });
 
