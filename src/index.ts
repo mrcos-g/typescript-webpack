@@ -5,7 +5,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 import http, { Server } from 'http';
 
-const hostname = '127.0.0.1';
+const hostname = process.env.NODE_ENV === 'production' ? '127.0.0.1' : '0.0.0.0';
 const port = Number(process.env.PORT) || 3000;
 
 const server: Server = http.createServer((req, res) => {
